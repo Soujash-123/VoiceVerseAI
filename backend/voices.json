@@ -1,0 +1,262 @@
+{
+    "Rachel": {
+        "voice_id": "21m00Tcm4TlvDq8ikWAM",
+        "category": "premade",
+        "sample_path": "voice_samples/Rachel.mp3"
+    },
+    "Drew": {
+        "voice_id": "29vD33N1CtxCmqQRPOHJ",
+        "category": "premade",
+        "sample_path": "voice_samples/Drew.mp3"
+    },
+    "Clyde": {
+        "voice_id": "2EiwWnXFnvU5JabPnv8n",
+        "category": "premade",
+        "sample_path": "voice_samples/Clyde.mp3"
+    },
+    "Paul": {
+        "voice_id": "5Q0t7uMcjvnagumLfvZi",
+        "category": "premade",
+        "sample_path": "voice_samples/Paul.mp3"
+    },
+    "Aria": {
+        "voice_id": "9BWtsMINqrJLrRacOk9x",
+        "category": "premade",
+        "sample_path": "voice_samples/Aria.mp3"
+    },
+    "Domi": {
+        "voice_id": "AZnzlk1XvdvUeBnXmlld",
+        "category": "premade",
+        "sample_path": "voice_samples/Domi.mp3"
+    },
+    "Dave": {
+        "voice_id": "CYw3kZ02Hs0563khs1Fj",
+        "category": "premade",
+        "sample_path": "voice_samples/Dave.mp3"
+    },
+    "Roger": {
+        "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+        "category": "premade",
+        "sample_path": "voice_samples/Roger.mp3"
+    },
+    "Fin": {
+        "voice_id": "D38z5RcWu1voky8WS1ja",
+        "category": "premade",
+        "sample_path": "voice_samples/Fin.mp3"
+    },
+    "Sarah": {
+        "voice_id": "EXAVITQu4vr4xnSDxMaL",
+        "category": "premade",
+        "sample_path": "voice_samples/Sarah.mp3"
+    },
+    "Antoni": {
+        "voice_id": "ErXwobaYiN019PkySvjV",
+        "category": "premade",
+        "sample_path": "voice_samples/Antoni.mp3"
+    },
+    "Laura": {
+        "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+        "category": "premade",
+        "sample_path": "voice_samples/Laura.mp3"
+    },
+    "Thomas": {
+        "voice_id": "GBv7mTt0atIp3Br8iCZE",
+        "category": "premade",
+        "sample_path": "voice_samples/Thomas.mp3"
+    },
+    "Charlie": {
+        "voice_id": "IKne3meq5aSn9XLyUdCD",
+        "category": "premade",
+        "sample_path": "voice_samples/Charlie.mp3"
+    },
+    "George": {
+        "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+        "category": "premade",
+        "sample_path": "voice_samples/George.mp3"
+    },
+    "Emily": {
+        "voice_id": "LcfcDJNUP1GQjkzn1xUU",
+        "category": "premade",
+        "sample_path": "voice_samples/Emily.mp3"
+    },
+    "Elli": {
+        "voice_id": "MF3mGyEYCl7XYWbV9V6O",
+        "category": "premade",
+        "sample_path": "voice_samples/Elli.mp3"
+    },
+    "Callum": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "category": "premade",
+        "sample_path": "voice_samples/Callum.mp3"
+    },
+    "Patrick": {
+        "voice_id": "ODq5zmih8GrVes37Dizd",
+        "category": "premade",
+        "sample_path": "voice_samples/Patrick.mp3"
+    },
+    "River": {
+        "voice_id": "SAz9YHcvj6GT2YYXdXww",
+        "category": "premade",
+        "sample_path": "voice_samples/River.mp3"
+    },
+    "Harry": {
+        "voice_id": "SOYHLrjzK2X1ezoPC6cr",
+        "category": "premade",
+        "sample_path": "voice_samples/Harry.mp3"
+    },
+    "Liam": {
+        "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+        "category": "premade",
+        "sample_path": "voice_samples/Liam.mp3"
+    },
+    "Dorothy": {
+        "voice_id": "ThT5KcBeYPX3keUQqHPh",
+        "category": "premade",
+        "sample_path": "voice_samples/Dorothy.mp3"
+    },
+    "Josh": {
+        "voice_id": "TxGEqnHWrfWFTfGW9XjX",
+        "category": "premade",
+        "sample_path": "voice_samples/Josh.mp3"
+    },
+    "Arnold": {
+        "voice_id": "VR6AewLTigWG4xSOukaG",
+        "category": "premade",
+        "sample_path": "voice_samples/Arnold.mp3"
+    },
+    "Charlotte": {
+        "voice_id": "XB0fDUnXU5powFXDhCwa",
+        "category": "premade",
+        "sample_path": "voice_samples/Charlotte.mp3"
+    },
+    "Alice": {
+        "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+        "category": "premade",
+        "sample_path": "voice_samples/Alice.mp3"
+    },
+    "Matilda": {
+        "voice_id": "XrExE9yKIg1WjnnlVkGX",
+        "category": "premade",
+        "sample_path": "voice_samples/Matilda.mp3"
+    },
+    "James": {
+        "voice_id": "ZQe5CZNOzWyzPSCn5a3c",
+        "category": "premade",
+        "sample_path": "voice_samples/James.mp3"
+    },
+    "Joseph": {
+        "voice_id": "Zlb1dXrM653N07WRdFW3",
+        "category": "premade",
+        "sample_path": "voice_samples/Joseph.mp3"
+    },
+    "Will": {
+        "voice_id": "bIHbv24MWmeRgasZH58o",
+        "category": "premade",
+        "sample_path": "voice_samples/Will.mp3"
+    },
+    "Jeremy": {
+        "voice_id": "bVMeCyTHy58xNoL34h3p",
+        "category": "premade",
+        "sample_path": "voice_samples/Jeremy.mp3"
+    },
+    "Jessica": {
+        "voice_id": "cgSgspJ2msm6clMCkdW9",
+        "category": "premade",
+        "sample_path": "voice_samples/Jessica.mp3"
+    },
+    "Eric": {
+        "voice_id": "cjVigY5qzO86Huf0OWal",
+        "category": "premade",
+        "sample_path": "voice_samples/Eric.mp3"
+    },
+    "Michael": {
+        "voice_id": "flq6f7yk4E4fJM5XTYuZ",
+        "category": "premade",
+        "sample_path": "voice_samples/Michael.mp3"
+    },
+    "Ethan": {
+        "voice_id": "g5CIjZEefAph4nQFvHAz",
+        "category": "premade",
+        "sample_path": "voice_samples/Ethan.mp3"
+    },
+    "Chris": {
+        "voice_id": "iP95p4xoKVk53GoZ742B",
+        "category": "premade",
+        "sample_path": "voice_samples/Chris.mp3"
+    },
+    "Gigi": {
+        "voice_id": "jBpfuIE2acCO8z3wKNLl",
+        "category": "premade",
+        "sample_path": "voice_samples/Gigi.mp3"
+    },
+    "Freya": {
+        "voice_id": "jsCqWAovK2LkecY7zXl4",
+        "category": "premade",
+        "sample_path": "voice_samples/Freya.mp3"
+    },
+    "Brian": {
+        "voice_id": "nPczCjzI2devNBz1zQrb",
+        "category": "premade",
+        "sample_path": "voice_samples/Brian.mp3"
+    },
+    "Grace": {
+        "voice_id": "oWAxZDx7w5VEj9dCyTzz",
+        "category": "premade",
+        "sample_path": "voice_samples/Grace.mp3"
+    },
+    "Daniel": {
+        "voice_id": "onwK4e9ZLuTAKqWW03F9",
+        "category": "premade",
+        "sample_path": "voice_samples/Daniel.mp3"
+    },
+    "Lily": {
+        "voice_id": "pFZP5JQG7iQjIQuC4Bku",
+        "category": "premade",
+        "sample_path": "voice_samples/Lily.mp3"
+    },
+    "Serena": {
+        "voice_id": "pMsXgVXv3BLzUgSXRplE",
+        "category": "premade",
+        "sample_path": "voice_samples/Serena.mp3"
+    },
+    "Adam": {
+        "voice_id": "pNInz6obpgDQGcFmaJgB",
+        "category": "premade",
+        "sample_path": "voice_samples/Adam.mp3"
+    },
+    "Nicole": {
+        "voice_id": "piTKgcLEGmPE4e6mEKli",
+        "category": "premade",
+        "sample_path": "voice_samples/Nicole.mp3"
+    },
+    "Bill": {
+        "voice_id": "pqHfZKP75CvOlQylNhV4",
+        "category": "premade",
+        "sample_path": "voice_samples/Bill.mp3"
+    },
+    "Jessie": {
+        "voice_id": "t0jbNlBVZ17f02VDIeMI",
+        "category": "premade",
+        "sample_path": "voice_samples/Jessie.mp3"
+    },
+    "Sam": {
+        "voice_id": "yoZ06aMxZJJ28mfd3POQ",
+        "category": "premade",
+        "sample_path": "voice_samples/Sam.mp3"
+    },
+    "Glinda": {
+        "voice_id": "z9fAnlkpzviPz146aGWa",
+        "category": "premade",
+        "sample_path": "voice_samples/Glinda.mp3"
+    },
+    "Giovanni": {
+        "voice_id": "zcAOhNBS3c14rBihAFp1",
+        "category": "premade",
+        "sample_path": "voice_samples/Giovanni.mp3"
+    },
+    "Mimi": {
+        "voice_id": "zrHiDhphv9ZnVXBqCLjz",
+        "category": "premade",
+        "sample_path": "voice_samples/Mimi.mp3"
+    }
+}
