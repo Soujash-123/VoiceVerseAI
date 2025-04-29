@@ -9,7 +9,9 @@ import traceback
 import re
 import json
 from dotenv import load_dotenv
+import os
 
+os.cwd("./backend")
 app = Flask(__name__)
 CORS(app)
 
