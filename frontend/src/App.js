@@ -41,8 +41,6 @@ import CreateIcon from '@mui/icons-material/Create';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import WavesIcon from '@mui/icons-material/Waves';
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 // Add new animation keyframes
 const fadeIn = keyframes`
   from {
@@ -305,7 +303,7 @@ function App() {
     // Fetch available voices when component mounts
     const fetchVoices = async () => {
       try {
-        const response = await axios.get(`${API_URL}/get-voices`);
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/get-voices`);
         setVoices(response.data);
       } catch (err) {
         console.error('Error fetching voices:', err);
@@ -336,7 +334,7 @@ function App() {
       playingSample.pause();
       playingSample.currentTime = 0;
     }
-    const audio = new Audio(`${API_URL}/voice-sample/${voices[voiceName].sample_path.split('/').pop()}`);
+    const audio = new Audio(`${process.env.REACT_APP_API_BASE_URL}/voice-sample/${voices[voiceName].sample_path.split('/').pop()}`);
     audio.onended = () => setPlayingSample(null);
     audio.play();
     setPlayingSample(audio);
@@ -347,7 +345,7 @@ function App() {
       setLoading(true);
       setError('');
       setModalOpen(true);
-      const response = await axios.post(`${API_URL}/generate-script`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/generate-script`, {
         prompt,
         numGuests,
         hostVoice,
@@ -369,7 +367,7 @@ function App() {
       setModalOpen(false);
       setIsGeneratingPodcast(true);
       
-      const response = await axios.post(`${API_URL}/create-podcast`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/create-podcast`, {
         script,
         hostVoice,
         guestVoices
@@ -432,7 +430,7 @@ function App() {
         ? `${prompt}\n\nPlease revise the script with these changes: ${revisionNote}`
         : prompt;
       
-      const response = await axios.post(`${API_URL}/generate-script`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/generate-script`, {
         prompt: revisedPrompt,
         numGuests,
         hostVoice,
