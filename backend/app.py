@@ -11,13 +11,13 @@ import json
 from dotenv import load_dotenv
 import os
 
-os.cwd("./backend")
+#os.cwd("./backend")
 app = Flask(__name__)
 CORS(app)
 
 # Configure API keys
 GEMINI_API_KEY = "AIzaSyBFFMPRr2y3woemAzEvmTPLWEaHgPaNoD0"
-ELEVENLABS_API_KEY = "sk_084f9441c4756d798a566c388bfc3a5c6dd46e6fc6598fa1"
+ELEVENLABS_API_KEY = "sk_dd8dcf37565a6ebf491c8f9cdc96249ce69b07f0aa548e58"
 
 # Configure Gemini
 client = genai.Client(api_key=GEMINI_API_KEY)
@@ -52,18 +52,21 @@ def clean_script_text(script_text):
 
 def generate_speech(text, voice_id):
     try:
-        audio_stream = elevenlabs_client.text_to_speech.convert_as_stream(
-            text=text,
-            voice_id=voice_id,
-            model_id="eleven_multilingual_v2",
-            output_format="mp3_44100_128",
-            voice_settings={
-                "stability": 0.4,
-                "similarity_boost": 0.8,
-                "style": 1.0,
-                "use_speaker_boost": True
-            }
-        )
+        audio_stream =  elevenlabs_client.text_to_speech.convert(
+    text=text,
+    voice_id=voice_id,
+    model_id="eleven_flash_v2_5",        # Corrected model ID
+    output_format="mp3_44100_128",       # Keep original quality
+    voice_settings={
+        "stability": 0.3,
+        "similarity_boost": 0.6,
+        "style": 0.1,
+        "use_speaker_boost": False       # Turning off to reduce token usage
+    }
+)
+
+
+
         return audio_stream
     except Exception as e:
         print(f"Error in generate_speech: {str(e)}")
@@ -180,6 +183,13 @@ def create_podcast():
             print(traceback.format_exc())
             return jsonify({'error': f'Error parsing script: {str(e)}'}), 500
         
+        # Calculate character count per speaker
+        character_counts = {}
+        for speaker, line in script:
+            if speaker not in character_counts:
+                character_counts[speaker] = 0
+            character_counts[speaker] += len(line)
+        
         # Get voice IDs
         host_voice_id = get_voice_id(host_voice)
         guest_voice_ids = [get_voice_id(voice) for voice in guest_voices]
@@ -224,7 +234,10 @@ def create_podcast():
                 print(traceback.format_exc())
                 return jsonify({'error': f'Error saving audio file: {str(e)}'}), 500
             
-            return send_file(filepath, mimetype='audio/mp3')
+            # Add character count to response headers
+            response = send_file(filepath, mimetype='audio/mp3')
+            response.headers['X-Character-Counts'] = json.dumps(character_counts)
+            return response
     
     except Exception as e:
         print(f"Error in create_podcast: {str(e)}")

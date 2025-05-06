@@ -298,6 +298,8 @@ function App() {
   const [revisionNote, setRevisionNote] = useState('');
   const [audioName, setAudioName] = useState('');
   const [isGeneratingPodcast, setIsGeneratingPodcast] = useState(false);
+  const [characterCounts, setCharacterCounts] = useState({});
+  const [showCharacterCounts, setShowCharacterCounts] = useState(false);
 
   useEffect(() => {
     // Fetch available voices when component mounts
@@ -366,6 +368,8 @@ function App() {
       setError('');
       setModalOpen(false);
       setIsGeneratingPodcast(true);
+      setCharacterCounts({});
+      setShowCharacterCounts(false);
       
       const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/create-podcast`, {
         script,
@@ -374,6 +378,18 @@ function App() {
       }, {
         responseType: 'blob'
       });
+      
+      // Extract character counts from response headers
+      const characterCountsHeader = response.headers['x-character-counts'];
+      if (characterCountsHeader) {
+        try {
+          const counts = JSON.parse(characterCountsHeader);
+          setCharacterCounts(counts);
+          setShowCharacterCounts(true);
+        } catch (e) {
+          console.error('Error parsing character counts:', e);
+        }
+      }
       
       const audioBlob = new Blob([response.data], { type: 'audio/mp3' });
       const audioUrl = URL.createObjectURL(audioBlob);
@@ -1283,26 +1299,80 @@ function App() {
                       width: '100%',
                       height: '40px',
                       '&::-webkit-media-controls-panel': {
-                        backgroundColor: 'transparent',
-                      },
-                      '&::-webkit-media-controls-play-button': {
-                        backgroundColor: darkTheme.palette.primary.main,
-                        borderRadius: '50%',
-                      },
-                      '&::-webkit-media-controls-current-time-display': {
-                        color: darkTheme.palette.text.primary,
-                      },
-                      '&::-webkit-media-controls-time-remaining-display': {
-                        color: darkTheme.palette.text.primary,
-                      },
+                        backgroundColor: 'background.paper',
+                      }
                     }
                   }}
                 >
-                  <audio 
-                    controls 
-                    src={audioUrl}
-                  />
+                  <audio controls src={audioUrl} />
                 </Box>
+                
+                {/* Character Count Display */}
+                {showCharacterCounts && Object.keys(characterCounts).length > 0 && (
+                  <Box 
+                    sx={{ 
+                      mt: 3,
+                      p: 2,
+                      borderRadius: 2,
+                      backgroundColor: 'background.paper',
+                      border: '1px solid',
+                      borderColor: 'divider',
+                    }}
+                  >
+                    <Typography 
+                      variant="h6" 
+                      sx={{ 
+                        mb: 2,
+                        color: 'text.primary',
+                        fontWeight: 600,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                      }}
+                    >
+                      <CreateIcon fontSize="small" />
+                      Character Count Statistics
+                    </Typography>
+                    <Grid container spacing={2}>
+                      {Object.entries(characterCounts).map(([speaker, count]) => (
+                        <Grid item xs={12} sm={6} key={speaker}>
+                          <Box 
+                            sx={{ 
+                              p: 2,
+                              borderRadius: 1,
+                              backgroundColor: 'background.default',
+                              border: '1px solid',
+                              borderColor: 'divider',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              gap: 1,
+                            }}
+                          >
+                            <Typography 
+                              variant="subtitle1" 
+                              sx={{ 
+                                color: 'primary.main',
+                                fontWeight: 600,
+                              }}
+                            >
+                              {speaker}
+                            </Typography>
+                            <Typography 
+                              variant="body1" 
+                              sx={{ 
+                                color: 'text.primary',
+                                fontWeight: 500,
+                                fontSize: '1.2rem',
+                              }}
+                            >
+                              {count.toLocaleString()} characters
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Box>
+                )}
               </Box>
             </CardContent>
           </Card>
