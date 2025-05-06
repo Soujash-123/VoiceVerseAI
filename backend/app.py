@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 from google import genai
 import uuid
@@ -12,12 +12,12 @@ from dotenv import load_dotenv
 import os
 
 #os.cwd("./backend")
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
 CORS(app)
 
 # Configure API keys
 GEMINI_API_KEY = "AIzaSyBFFMPRr2y3woemAzEvmTPLWEaHgPaNoD0"
-ELEVENLABS_API_KEY = "sk_dd8dcf37565a6ebf491c8f9cdc96249ce69b07f0aa548e58"
+ELEVENLABS_API_KEY = "sk_3309083d19f509c1dea8a6a2ff2fa5851f1b32f934432d05"
 
 # Configure Gemini
 client = genai.Client(api_key=GEMINI_API_KEY)
@@ -244,5 +244,14 @@ def create_podcast():
         print(traceback.format_exc())
         return jsonify({'error': str(e)}), 500
 
+# Serve React App - this should be at the end of the file
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000) 
+    app.run(debug=True, port=5000)
